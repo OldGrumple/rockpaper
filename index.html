@@ -10,7 +10,38 @@
 </head>
 <body>
     <script>
-        
+        const playerChoice = prompt("Please select one of the options", "Rock, Paper, Scissors");
+        const computerChoice = computerPlay();
+
+        function computerPlay(){
+            let choices = ["Rock", "Paper", "Scissors"];
+            let randomChoice = choices[Math.floor(Math.random()*choices.length)];
+            return randomChoice;
+        }
+        function playSingle(playerChoice, computerChoice){
+            if(computerChoice == "Paper" && playerChoice == "Paper"){
+                return console.log("You have tied");
+            } else if(computerChoice == "Paper" && playerChoice == "Scissors"){
+                return console.log("You have lost...")
+            } else if(computerChoice == "Paper" && playerChoice == "Rock") {
+                return console.log("You have Won!");
+            } else if(computerChoice == "Rock" && playerChoice == "Rock") {
+                return console.log("You have tied");
+            } else if(computerChoice == "Rock" && playerChoice == "Paper") {
+                return console.log("You have Won");
+            } else if (computerChoice == "Rock" && playerChoice == "Scissors") {
+                return console.log("You have lost");
+            } else if(computerChoice == "Scissors" && playerChoice == "Scissors") {
+                return console.log("You have tied");
+            } else if(computerChoice == "Scissors" && playerChoice == "Paper") {
+                return console.log("You have lost");
+            } else if (computerChoice == "Scissors" && playerChoice == "Rock") {
+                return console.log("You have won!");
+            } else {
+                return console.log("Somehting is still wrong...")
+            }
+        }
+        playSingle();
     </script>
     <h1>Rock Paper Scissors</h1>
     <p>To play this game just press <span>F12</span> or <span>Cntrl/Cmd + Shift + J</span></p>
